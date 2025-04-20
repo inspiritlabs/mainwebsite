@@ -6,7 +6,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY!);
 
 export default function CheckoutPage() {
   const handleCheckout = async () => {
-    const res = await fetch('/api/create-checkout-session', {
+    const res = await fetch('pages/api/create-checkout-session.js', {
       method: 'POST',
     });
     const { id } = await res.json();
